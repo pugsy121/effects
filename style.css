@@ -41,6 +41,7 @@ body {
     transform: translateX(-50%);
 }
 
+/* Floating animation */
 @keyframes float {
     0% {
         transform: translateY(0) translateX(0) scale(1);
@@ -55,32 +56,57 @@ body {
     }
 }
 
-/* Balloons Variations */
-.balloon:nth-child(1) { left: 10%; background: radial-gradient(circle, #ff9a00 60%, #f5b041 100%); animation-delay: 0s; }
-.balloon:nth-child(2) { left: 30%; background: radial-gradient(circle, #ff6f61 60%, #ff4b4b 100%); animation-delay: 2s; }
-.balloon:nth-child(3) { left: 50%; background: radial-gradient(circle, #ff5f7e 60%, #ff99ac 100%); animation-delay: 4s; }
-.balloon:nth-child(4) { left: 70%; background: radial-gradient(circle, #ffd700 60%, #ffbb00 100%); animation-delay: 6s; }
-.balloon:nth-child(5) { left: 90%; background: radial-gradient(circle, #8fbc8f 60%, #5f9ea0 100%); animation-delay: 8s; }
+/* Multiple balloons (varying colors and delays) */
+.balloon:nth-child(1) {
+    left: 10%;
+    background: radial-gradient(circle, #ff9a00 60%, #f5b041 100%);
+    animation-delay: 0s;
+}
+
+.balloon:nth-child(2) {
+    left: 30%;
+    background: radial-gradient(circle, #ff6f61 60%, #ff4b4b 100%);
+    animation-delay: 2s;
+}
+
+.balloon:nth-child(3) {
+    left: 50%;
+    background: radial-gradient(circle, #ff5f7e 60%, #ff99ac 100%);
+    animation-delay: 4s;
+}
+
+.balloon:nth-child(4) {
+    left: 70%;
+    background: radial-gradient(circle, #ffd700 60%, #ffbb00 100%);
+    animation-delay: 6s;
+}
+
+.balloon:nth-child(5) {
+    left: 90%;
+    background: radial-gradient(circle, #8fbc8f 60%, #5f9ea0 100%);
+    animation-delay: 8s;
+}
 
 /* Video Container */
 .video-container {
-    position: relative;
-    max-width: 360px;
-    aspect-ratio: 9 / 16;
-    margin: 50px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px; /* Adjust width for 9:16 aspect ratio */
+    height: 640px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Video Styling */
+/* Video Element */
 .video {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 10px;
-    object-fit: cover;
 }
 
 /* Play Button */
@@ -98,11 +124,4 @@ body {
 
 .play-button:hover {
     background: #ff4b4b;
-}
-
-/* Android Optimization */
-@media (max-width: 768px) {
-    .video-container {
-        max-width: 300px;
-    }
 }
