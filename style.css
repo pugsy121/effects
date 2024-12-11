@@ -100,8 +100,9 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    padding-bottom: 50px; /* Ensures space for the button */
-    overflow: hidden; /* Ensures content stays inside */
+    justify-content: flex-end; /* Ensures button stays inside */
+    padding-bottom: 40px; /* Provides space for button inside */
+    box-sizing: border-box; /* Ensures padding is included in the overall size */
 }
 
 /* Video Element */
@@ -122,7 +123,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
-    margin-top: auto; /* Ensures the button stays at the bottom of the container */
 }
 
 .play-button:hover {
