@@ -1,0 +1,117 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Background Styling */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Balloons */
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 60px;
+    height: 80px;
+    background: radial-gradient(circle, #ff6f61 60%, #ff4b4b 100%);
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    animation: float 10s linear infinite;
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 50px;
+    background: #aaa;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-300px) translateX(-20px) scale(1.1);
+    }
+    100% {
+        transform: translateY(-700px) translateX(30px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Multiple balloons (varying colors and delays) */
+.balloon:nth-child(1) {
+    left: 10%;
+    background: radial-gradient(circle, #ff9a00 60%, #f5b041 100%);
+    animation-delay: 0s;
+}
+
+.balloon:nth-child(2) {
+    left: 30%;
+    background: radial-gradient(circle, #ff6f61 60%, #ff4b4b 100%);
+    animation-delay: 2s;
+}
+
+.balloon:nth-child(3) {
+    left: 50%;
+    background: radial-gradient(circle, #ff5f7e 60%, #ff99ac 100%);
+    animation-delay: 4s;
+}
+
+.balloon:nth-child(4) {
+    left: 70%;
+    background: radial-gradient(circle, #ffd700 60%, #ffbb00 100%);
+    animation-delay: 6s;
+}
+
+.balloon:nth-child(5) {
+    left: 90%;
+    background: radial-gradient(circle, #8fbc8f 60%, #5f9ea0 100%);
+    animation-delay: 8s;
+}
+
+/* Video Container */
+.video-container {
+    position: relative;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Play Button */
+.play-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.play-button:hover {
+    background: #ff4b4b;
+}
